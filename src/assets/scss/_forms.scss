@@ -1,0 +1,102 @@
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+input,
+label,
+select {
+    display: block;
+    font-size: 1em;
+}
+
+label {
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    border: 1px solid $lightgrey;
+    font-family: $font-family-base;
+    min-height: 42px;
+    padding: 0 10px;
+    width: 100%;
+
+    @include respond-to(large) {
+        font-size: 20px;
+    }
+}
+
+select {
+    appearance: none;
+}
+
+.form-navigation {
+    padding: 50px 0 0;
+    position: relative;
+    text-align: right;
+
+    @include respond-to(medium) {
+        padding-top: 50px;
+    }
+}
+
+.form-navigation_message {
+    background-color: #fff;
+    font-weight: 400;
+    left: 0;
+    padding: 8px;  
+    position: absolute;
+    top: 0;
+    
+    @include respond-to(medium) {
+        padding-bottom: 20px;
+        padding-top: 20px;        
+    }
+}
+
+.message--error {
+    color: $errorred;
+}
+
+.field {
+    margin-bottom: 24px;
+}
+
+.field_control {
+    position: relative;
+}
+
+.field_control--select {
+    
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+    }
+
+    &:before {
+        border: 8px solid transparent;
+        border-top-color: $darkgrey;        
+        height: 0;
+        margin-top: -4px;        
+        right: 12px;
+        top: 50%;
+        width: 0;
+    }
+
+    &:after {
+        background-color: $lightgrey;
+        bottom: 0;
+        right: 42px;
+        top: 0;
+        width: 1px;
+    }
+}

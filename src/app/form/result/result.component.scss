@@ -1,0 +1,40 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.profile {
+    
+    @include respond-to(large) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+}
+
+.profile_image {
+    
+    @include respond-to(large) {
+        width: 50%;
+    }
+}
+
+.profile_name  {
+    border-bottom: 1px solid $darkgrey;
+    padding-bottom: 20px;
+}
+
+.profile_image {
+    
+    
+}
+
+.profile_prefix {
+    margin-bottom: 10px;
+}
+
+.profile_content {
+
+    @include respond-to(large) {
+        padding-left: 20px;
+        width: (100% / 12) * 5;
+    }
+}

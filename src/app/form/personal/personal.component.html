@@ -1,0 +1,121 @@
+<section class="section">
+    <div class="container">
+
+        <progress-indicator step={{activeStep}} ></progress-indicator>
+
+        <header class="header header--step">
+            <h1 class="heading--medium">Please tell us about yourself</h1>
+        </header>
+
+        <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)" class="form form--profiler">
+            
+            <div class="fieldset--wrapper">
+
+                <fieldset class="fieldset fieldset--personal">
+                    
+                    <div class="field">
+                        <label for="fullname">Name</label>
+                        <div class="field_control">
+                            <input id="fullname" name="fullname" type="text" [(ngModel)]="formData.fullname" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="age">Age</label>
+                        <div class="field_control field_control--select">              
+                            <select id="age" name="age" [(ngModel)]="formData.age" required>
+                                <option value="">Select</option>
+                                <option value="19-and-under">19 and under</option>
+                                <option value="20-29-years">20-29 years</option>
+                                <option value="30-39-years">30-39 years</option>
+                                <option value="40-49-years">40-49 years</option>
+                                <option value="50-59-years">50-59 years</option>
+                                <option value="60-plus-years">60-plus years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="gender">Gender</label>
+                        <div class="field_control field_control--select">
+                            <select name="gender" id="gender" [(ngModel)]="formData.gender" required>
+                                <option value="">Select</option>
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="role">Role</label>
+                        <div class="field_control field_control--select">
+                            <select id="role" name="role" [(ngModel)]="formData.role" required>
+                                <option value="">Select</option>
+                                <option value="customer-facing">Customer Facing</option>
+                                <option value="non-customer-facing">Non Customer Facing</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="fieldset fieldset--personal">
+                    
+                    <div class="field">
+                        <label for="businessunit">Business Unit</label>
+                        <div class="field_control field_control--select">              
+                            <select id="businessunit" name="businessunit" [(ngModel)]="formData.businessunit" required>
+                                <option value="">Select</option>
+                                <option value="businessunit1">Business Unit 1</option>
+                                <option value="businessunit2">Business Unit 2</option>
+                                <option value="businessunit3">Business Unit 3</option>
+                                <option value="businessunit4">Business Unit 4</option>
+                                <option value="businessunit5">Business Unit 5</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="location">Location</label>
+                        <div class="field_control field_control--select">
+                            <select id="location" name="location" [(ngModel)]="formData.location" required>
+                                <option value="">Select</option>
+                                <option value="location1">Location 1</option>
+                                <option value="location1">Location 2</option>
+                                <option value="location1">Location 3</option>
+                                <option value="location1">Location 4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="tenure">Tenure</label>
+                        <div class="field_control field_control--select">
+                            <select id="tenure" name="tenure" [(ngModel)]="formData.tenure" required>
+                                <option value="">Select</option>
+                                <option value="0-3-years">0-3 years</option>
+                                <option value="4-10-years">4-10 years</option>
+                                <option value="11-20-years">11-20 years</option>
+                                <option value="20-plus-years">20-plus years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </div>
+
+            <div class="form-navigation">
+                <div [hidden]="stepValid" class="form-navigation_message message--error">
+                    Please answer all questions
+                </div>
+                <span [hidden]="stepFirst">
+                    <button type="button" class="button" (click)="goToPreviousStep()">&lt; Previous</button>
+                </span>
+                <button type="button" class="button" (click)="goToNextStep(profileForm)">Submit</button>
+            </div>
+
+        </form>
+
+    </div>
+</section>

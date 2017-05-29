@@ -1,0 +1,18 @@
+<section class="section">
+    <div class="container">
+
+        <progress-indicator step={{activeStep}} ></progress-indicator>
+
+        <div class="profile">
+
+            <div class="profile_content">
+                <p class="lead profile_prefix">You are a</p>
+                <h1 class="profile_name heading--xlarge">{{profileSubType}} {{profileType}}</h1>
+                <p class="lead">{{profileSummary}}</p>
+                <button class="button" (click)="goToStart()">Start again</button>
+            </div>
+
+        </div>
+
+    </div>
+</section>

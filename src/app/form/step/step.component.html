@@ -1,0 +1,55 @@
+<section class="section">
+    <div class="container">
+
+        <progress-indicator step={{activeStep}} ></progress-indicator>
+    
+        <header class="header header--step">
+            <h1 class="heading--medium">Please select the answer which best fits you</h1>
+        </header>
+
+        <ul class="profiler-labels">
+            <li class="profiler-labels_item" *ngFor="let answer of answers" >
+                {{answer.label}}
+            </li>
+        </ul>
+
+        <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)" class="form--profiler">
+
+            <div class="question" *ngFor="let question of questions">
+
+                <div class="question_text">{{question.text}}</div>
+                
+                <div class="question_options">
+
+                    <div class="field field--answer" *ngFor="let answer of answers">
+
+                        <input required [(ngModel)]="formData[question.modelKey]" id="q{{question.id}}v{{answer.value}}" type="radio" name="q{{question.id}}" value="{{answer.value}}" class="question_radio" />
+
+                        <label for="q{{question.id}}v{{answer.value}}" class="question_label">{{answer.label}}</label>
+
+                    </div>
+
+                </div>
+
+            </div>            
+
+            <div class="form-navigation">
+                <div [hidden]="stepValid" class="form-navigation_message message--error">
+                    Please answer all questions
+                </div>
+
+                <div class="button-group">
+                    <div class="button-group_item" [hidden]="stepFirst">
+                        <button type="button" class="button" (click)="goToPreviousStep()">&lt; Previous</button>
+                    </div>
+                    <div class="button-group_item">
+                        <button type="button" class="button" (click)="goToNextStep(profileForm)">Next &gt;</button>                   
+                    </div>
+                </div>
+                
+            </div>
+
+        </form>
+
+    </div>
+</section>

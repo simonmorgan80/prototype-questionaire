@@ -1,0 +1,99 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.progress {
+    display: flex;    
+    list-style: none;
+    margin: 0 0 40px 0;
+    padding: 0;
+    position: relative;    
+
+    @include respond-to(medium) {
+        justify-content: center;  
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 35px;
+    }
+}
+
+.progress_item {
+    background-color: $lightgrey;
+    border-radius: 3px;    
+    font-size: 16px;
+    height: 26px;
+    line-height: 26px;
+    margin-right: 4px;
+    position: relative;
+    text-align: center;
+    width: 26px;
+
+    @include respond-to(medium) {
+        font-size: 21px;
+        height: 35px;
+        line-height: 35px;
+        margin-right: 20px;
+        width: 35px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }    
+
+    &:before {
+        background-color: $lightgrey;
+        content: '';
+        position: absolute;
+        height: 2px;
+        margin-top: -1px;
+        right: 100%;
+        top: 50%;
+        width: 4px;
+
+        @include respond-to(medium) {
+            height: 3px;
+            margin-top: -2px;
+            width: 20px;
+        }
+    }
+
+    &:first-child:before {
+        content: none;
+    }
+
+    &.is-complete {
+        background-color: #303030;
+        // background-image: linear-gradient(56deg, #0099D4 1%, #5B358C 100%);
+        color: #fff;
+       
+        .icon {
+            stroke: #fff;
+        }
+        
+        &:before {
+            background-color: #303030;
+        }
+    }
+
+    .icon {
+        stroke: $darkgrey;
+        margin-top: 3px;
+        max-width: 16px;
+
+        @include respond-to(medium) {
+            max-width: none;
+        }   
+    }
+}
+
+.progress_item--text {
+    border-radius: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: auto;
+
+    @include respond-to(medium) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }   
+}

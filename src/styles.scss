@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/fonts';
+@import './assets/scss/variables';
+@import './assets/scss/mixins';
+@import './assets/scss/button';
+@import './assets/scss/forms';
+@import './assets/scss/typography';
+@import './assets/scss/layout';
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}

@@ -1,0 +1,32 @@
+<ul class="progress">
+    <li class="progress_item is-complete">
+        <span class="sr-only">Home</span>
+
+        <svg width="21px" height="19px" viewBox="0 0 21 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon icon--home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+            <path d="M3.5,11.45 L3.5,18.45"></path>
+            <path d="M17.5,11.45 L17.5,18.45"></path>
+            <path d="M4.5,18.5 L16.5,18.5"></path>
+            <path d="M10.5,0.5 L0.5,10.5"></path>
+            <path d="M10.5,0.5 L20.5,10.5"></path>
+        </svg>
+
+    </li>
+    <li class="progress_item" [ngClass]="{'is-complete': step >= '1'}">
+        1
+    </li>
+    <li class="progress_item" [ngClass]="{'is-complete': step >= '2'}">
+        2
+    </li>
+    <li class="progress_item" [ngClass]="{'is-complete': step >= '3'}">
+        3
+    </li>
+    <li class="progress_item" [ngClass]="{'is-complete': step >= '4'}">
+        4
+    </li>
+    <li class="progress_item" [ngClass]="{'is-complete': step >= '5'}">
+        5
+    </li>
+    <li class="progress_item progress_item--text" [ngClass]="{'is-complete': step >= '6'}">
+        Result
+    </li>
+</ul>

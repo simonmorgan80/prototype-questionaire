@@ -1,0 +1,38 @@
+// $font-regular: 'AauxNext-Regular';
+// $font-thin: 'AauxNext-Thin';
+// $font-medium: 'AauxNext-Medium';
+// $font-semibold: 'AauxNext-SemiBold';
+
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-headings: $font-family-base;
+
+
+$darkgrey: #303030;
+$lightgrey: #eaeaea;
+
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+$breakpoints: (
+    'xsmall' : ( min-width: 480px ),
+    'small'  : ( min-width: #{$screen-sm-min}), 
+    'medium' : ( min-width: #{$screen-md-min}),
+    'large'  : ( min-width: #{$screen-lg-min})
+);
+
+/* Oval: */
+$gradientOrangePurple: linear-gradient(-180deg, #EB5B25 0%, #5B358C 100%);
+$gradientPurpleBlue: linear-gradient(0deg, #0099D4 0%, #5B358C 100%);
+$gradientGreenBlue: linear-gradient(0deg, #0099D4 0%, #56AF31 100%);
+$gradientGreenYellow: linear-gradient(0deg, #FFD300 0%, #56AF31 100%);
+$gradientOrangeYellow: linear-gradient(0deg, #FFD300 0%, #EB5B25 100%);
+
+$gradientBluePurpleHorizontal: linear-gradient(-46deg, #5B358C 0%, #0099D4 100%);
+
+$orange: #EB5B25;
+$purple: #5B358C;
+$green: #56AF31;
+$yellow: #FFD300;
+$blue: #0099D4;
+$errorred: #ff1515;

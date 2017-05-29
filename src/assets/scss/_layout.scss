@@ -1,0 +1,24 @@
+.section {
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    @include respond-to(small) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+}
+
+.section--step {
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}

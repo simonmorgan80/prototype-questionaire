@@ -1,0 +1,68 @@
+html {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+    overflow-y: scroll;
+}
+
+body {
+    color: $darkgrey;
+    font-family: $font-family-base;
+    line-height: 1.5; /*24*/
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-headings;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.25;
+    margin: 0 0 1.5rem;
+}
+
+p {
+    margin: 0 0 1.5rem;
+}
+
+label {
+    cursor: pointer;
+}
+
+.heading--xlarge {
+    font-size: 2.8750em; /* 46px */
+    line-height: 1.0435em; /* 48px */
+    margin-bottom: 0.5217em;
+}
+
+.heading--large {
+    // font-family: $font-medium, Arial, sans-serif;
+    font-size: 2.0000em; /* 32px */
+    line-height: 1.5000em; /* 48px */
+    margin-bottom: 0.7500em;
+}
+
+.heading--medium {
+    font-size: 1.3125em; /* 21px */
+    line-height: 1.1429em; /* 24px */
+    margin-bottom: 1.1429em;
+}
+
+.heading--small,
+.lead {
+    font-size: 1.1250em; /* 18px */
+    line-height: 1.3333em; /* 24px */
+    margin-bottom: 1.3333em;
+}
+
+.lead {
+
+    @include respond-to(large) {
+        font-size: 1.3125em; /* 21px */        
+        margin-bottom: 1.1429em;
+    }
+}

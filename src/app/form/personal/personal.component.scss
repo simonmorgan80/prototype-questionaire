@@ -1,0 +1,17 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.fieldset--wrapper {
+    
+    @include respond-to(small) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.fieldset--personal {
+
+    @include respond-to(small) {
+        width: calc(50% - 20px);
+    }
+}
