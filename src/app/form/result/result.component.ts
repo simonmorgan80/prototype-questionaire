@@ -46,20 +46,20 @@ export class ResultComponent implements OnInit {
 
         switch (type.toLowerCase()) {
             case 'type1':
-                subtractValue = 14.81;
-                divideValue = 2.68;
+                subtractValue = 12.81;
+                divideValue = 3.1;
                 break;
             case 'type2':
-                subtractValue = 15.10;
-                divideValue = 2.82;
+                subtractValue = 14.10;
+                divideValue = 1.3;
                 break;
             case 'type3':
-                subtractValue = 13.76;
-                divideValue = 2.87;
+                subtractValue = 11.23;
+                divideValue = 1.6;
                 break;
-            case 'trooper':
-                subtractValue = 16.10;
-                divideValue = 2.38;
+            case 'type4':
+                subtractValue = 14.10;
+                divideValue = 1.5;
                 break;
             default:            
         }
@@ -88,7 +88,7 @@ export class ResultComponent implements OnInit {
     }
 
     getType(groups) {
-        // get type champion/challenger/perfectionist/trooper
+        // get type type1/type2/type3/type4
         let type = groups.reduce(function(acc, cur) {
             return acc.groupScore > cur.groupScore ? acc : cur;
         });
@@ -131,47 +131,47 @@ export class ResultComponent implements OnInit {
 
     calculateProfile() {
 
-        let questionChampion,
-            questionchallenger,
-            questionPerfectionist,
-            questionTrooper;
+        let questionType1,
+            questionType2,
+            questionType3,
+            questionType4;
 
-        questionChampion = [
+        questionType1 = [
             {score: +this.formData.q1, subtype: 'subtype1', weighting: 1},
             {score: +this.formData.q2, subtype: 'subtype2', weighting: 3},
             {score: +this.formData.q3, subtype: 'subtype3', weighting: 2}
         ];
 
-        questionchallenger = [
+        questionType2 = [
             {score: +this.formData.q4, subtype: 'subtype4', weighting: 3},
             {score: +this.formData.q5, subtype: 'subtype5', weighting: 2},
             {score: +this.formData.q6, subtype: 'subtype6', weighting: 1}
         ];
 
-        questionPerfectionist = [
+        questionType3 = [
             {score: +this.formData.q7, subtype: 'subtype7', weighting: 2},
             {score: +this.formData.q8, subtype: 'subtype8', weighting: 3},
             {score: +this.formData.q9, subtype: 'subtype9', weighting: 1}
         ];
 
-        questionTrooper = [
+        questionType4 = [
             {score: +this.formData.q10, subtype: 'subtype10', weighting: 2},
             {score: +this.formData.q11, subtype: 'subtype11', weighting: 3},
             {score: +this.formData.q12, subtype: 'subtype12', weighting: 1}
         ];
 
-        let champion,
-            challenger,
-            perfectionist,
-            trooper,
+        let type1,
+            type2,
+            type3,
+            type4,
             profileResult;
 
-        champion = this.getScore(questionChampion, 'Type1');
-        challenger = this.getScore(questionchallenger, 'Type2');
-        perfectionist = this.getScore(questionPerfectionist, 'Type3');
-        trooper = this.getScore(questionTrooper, 'Type4');
+        type1 = this.getScore(questionType1, 'Type1');
+        type2 = this.getScore(questionType2, 'Type2');
+        type3 = this.getScore(questionType3, 'Type3');
+        type4 = this.getScore(questionType4, 'Type4');
 
-        profileResult = this.getType([champion, challenger, perfectionist, trooper]);
+        profileResult = this.getType([type1, type2, type3, type4]);
 
         this.profileId = profileResult.groupId;
         this.profileType = profileResult.groupType;
